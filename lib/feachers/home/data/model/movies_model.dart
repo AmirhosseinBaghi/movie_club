@@ -1,4 +1,4 @@
-class Movie {
+class MoviesModel {
   final int id;
   final String title;
   final String poster;
@@ -8,7 +8,7 @@ class Movie {
   final List<String> genres;
   final List<String> images;
 
-  Movie({
+  MoviesModel({
     required this.id,
     required this.title,
     required this.poster,
@@ -19,7 +19,7 @@ class Movie {
     required this.images,
   });
 
-  factory Movie.fromJson(Map<String, dynamic> json) => Movie(
+  factory MoviesModel.fromJson(Map<String, dynamic> json) => MoviesModel(
     id: json["id"],
     title: json["title"],
     poster: json["poster"],
