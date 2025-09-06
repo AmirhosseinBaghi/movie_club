@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:movie_club/feachers/home/data/repository/movie_repository.dart';
+import 'package:movie_club/feachers/home/presentation/provider/movie_provider.dart';
+import 'package:movie_club/shared/services/api_service.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) =>
+              MovieProvider(MovieRepository(apiService: ApiService())),
+        ),
+      ],
+
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
