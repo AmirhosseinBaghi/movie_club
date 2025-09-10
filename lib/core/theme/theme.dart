@@ -13,34 +13,41 @@ class AppTheme {
         titleLarge: GoogleFonts.poppins(
           fontSize: 16,
           fontWeight: FontWeight.w600,
+          color: Colors.white,
         ),
         titleMedium: GoogleFonts.poppins(
           fontSize: 12,
           fontWeight: FontWeight.w600,
+          color: Colors.white,
         ),
         titleSmall: GoogleFonts.poppins(
           fontSize: 12,
           fontWeight: FontWeight.w400,
+          color: Colors.white,
         ),
 
         //search screen
         labelLarge: GoogleFonts.poppins(
           fontSize: 16,
           fontWeight: FontWeight.w500,
+          color: Colors.white,
         ),
 
         //detail screen
         displayLarge: GoogleFonts.poppins(
           fontSize: 24,
           fontWeight: FontWeight.w600,
+          color: Colors.white,
         ),
         bodyMedium: GoogleFonts.poppins(
           fontSize: 16,
           fontWeight: FontWeight.w400,
+          color: Colors.white,
         ),
         bodySmall: GoogleFonts.poppins(
           fontSize: 10,
           fontWeight: FontWeight.w400,
+          color: Colors.white,
         ),
       ),
     );
