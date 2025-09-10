@@ -18,7 +18,7 @@ class MovieSection extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 16, right: 16, left: 16),
+          padding: const EdgeInsets.only(right: 16, left: 16),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -33,9 +33,8 @@ class MovieSection extends StatelessWidget {
             ],
           ),
         ),
-        // SizedBox(height: 8),
         SizedBox(
-          height: 350,
+          height: 220,
           child: ListView.builder(
             itemCount: movies.length,
             scrollDirection: Axis.horizontal,

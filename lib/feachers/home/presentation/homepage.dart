@@ -9,18 +9,50 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Consumer<MovieProvider>(
-            builder: (context, homeProvider, child) {
-              return MovieSection(
-                title: 'Trending',
-                onSeeAllPressed: () {},
-                movies: homeProvider.movies,
-              );
-            },
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Consumer<MovieProvider>(
+              builder: (context, homeProvider, child) {
+                return MovieSection(
+                  title: 'Trending',
+                  onSeeAllPressed: () {},
+                  movies: homeProvider.getTrendingMovies(),
+                );
+              },
+            ),
+            // SizedBox(height: 8),
+            Consumer<MovieProvider>(
+              builder: (context, homeProvider, child) {
+                return MovieSection(
+                  title: 'New Release - Movies',
+                  onSeeAllPressed: () {},
+                  movies: homeProvider.getNewReleaseMovie(),
+                );
+              },
+            ),
+            // SizedBox(height: 8),
+            Consumer<MovieProvider>(
+              builder: (context, homeProvider, child) {
+                return MovieSection(
+                  title: 'New Release - Tv Show',
+                  onSeeAllPressed: () {},
+                  movies: homeProvider.getnewReleaseTv(),
+                );
+              },
+            ),
+            // SizedBox(height: 8),
+            Consumer<MovieProvider>(
+              builder: (context, homeProvider, child) {
+                return MovieSection(
+                  title: 'Recommended',
+                  onSeeAllPressed: () {},
+                  movies: homeProvider.getRecommendedMovies(),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
