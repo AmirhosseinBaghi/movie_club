@@ -22,12 +22,18 @@ class MovieSection extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(title),
-              TextButton(onPressed: onSeeAllPressed, child: Text("see all")),
+              Text(title, style: Theme.of(context).textTheme.titleLarge),
+              TextButton(
+                onPressed: onSeeAllPressed,
+                child: Text(
+                  "see all",
+                  style: Theme.of(context).textTheme.titleSmall,
+                ),
+              ),
             ],
           ),
         ),
-        SizedBox(height: 8),
+        // SizedBox(height: 8),
         SizedBox(
           height: 350,
           child: ListView.builder(

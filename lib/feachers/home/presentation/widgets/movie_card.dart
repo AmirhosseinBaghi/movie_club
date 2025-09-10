@@ -8,7 +8,7 @@ class MovieCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.only(top: 8, left: 12, right: 12),
       child: SizedBox(
         width: 120,
         child: Column(
@@ -28,7 +28,7 @@ class MovieCard extends StatelessWidget {
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 10, fontWeight: FontWeight.w700),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ],
         ),
