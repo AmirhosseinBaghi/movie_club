@@ -25,7 +25,7 @@ class MovieCard extends StatelessWidget {
             SizedBox(height: 4),
             Text(
               movies.title,
-              maxLines: 3,
+              maxLines: 2,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleMedium,
