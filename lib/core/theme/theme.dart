@@ -8,6 +8,10 @@ class AppTheme {
       brightness: Brightness.dark,
       fontFamily: GoogleFonts.poppins().fontFamily,
       scaffoldBackgroundColor: Color(0xFF34344A),
+      appBarTheme: AppBarTheme(
+        elevation: 0,
+        backgroundColor: Color(0xFF34344A),
+      ),
       textTheme: TextTheme(
         //home page , textTheme for posters
         titleLarge: GoogleFonts.poppins(
