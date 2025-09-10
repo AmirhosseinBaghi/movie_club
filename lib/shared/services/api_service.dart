@@ -6,7 +6,7 @@ class ApiService {
   final Dio dio = Dio(BaseOptions(baseUrl: AppConstant.baseUrl));
   Future<List<MoviesModel>> loadMovie() async {
     try {
-      Response response = await dio.get('movies');
+      Response response = await dio.get('/movies');
       List<dynamic> moviesList = response.data["data"];
       return moviesList.map((movie) => MoviesModel.fromJson(movie)).toList();
     } catch (e) {
