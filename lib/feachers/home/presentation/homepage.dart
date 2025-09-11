@@ -45,7 +45,6 @@ class HomePage extends StatelessWidget {
                 );
               },
             ),
-            // SizedBox(height: 8),
             Consumer<MovieProvider>(
               builder: (context, homeProvider, child) {
                 return MovieSection(
@@ -55,7 +54,6 @@ class HomePage extends StatelessWidget {
                 );
               },
             ),
-            // SizedBox(height: 8),
             Consumer<MovieProvider>(
               builder: (context, homeProvider, child) {
                 return MovieSection(
@@ -65,7 +63,6 @@ class HomePage extends StatelessWidget {
                 );
               },
             ),
-            // SizedBox(height: 8),
             Consumer<MovieProvider>(
               builder: (context, homeProvider, child) {
                 return MovieSection(
