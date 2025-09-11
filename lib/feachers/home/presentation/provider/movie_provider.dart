@@ -42,4 +42,9 @@ class MovieProvider extends ChangeNotifier {
         .where((hotel) => _homePageData.recommended.contains(hotel.id))
         .toList();
   }
+
+  List<MoviesModel> getStolyMovies() {
+    final shuffleMovies = List<MoviesModel>.from(_moives)..shuffle();
+    return shuffleMovies.take(4).toList();
+  }
 }
