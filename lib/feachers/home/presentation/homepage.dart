@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:movie_club/feachers/home/presentation/provider/movie_provider.dart';
 import 'package:movie_club/feachers/home/presentation/widgets/banner.dart';
+import 'package:movie_club/feachers/home/presentation/widgets/fake_searchbar.dart';
 import 'package:movie_club/feachers/home/presentation/widgets/movie_section.dart';
+import 'package:movie_club/feachers/home/presentation/widgets/search_bar.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
@@ -24,6 +26,14 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            FakeSearchbar(
+              onpress: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => SearchBarWidget()),
+                );
+              },
+            ),
+            // SearchBarWidget(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               child: Text(
