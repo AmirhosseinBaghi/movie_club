@@ -9,4 +9,11 @@ class MovieRepository {
   Future<List<MoviesModel>> fetchMovie() async {
     return apiService.loadMovie();
   }
+
+  Future<List<MoviesModel>> searchMovie(String query) async {
+    if (query.isEmpty) {
+      return [];
+    }
+    return apiService.searchMovie(query);
+  }
 }
