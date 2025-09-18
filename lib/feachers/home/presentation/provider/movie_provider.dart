@@ -13,6 +13,10 @@ class MovieProvider extends ChangeNotifier {
   final HomePageData _homePageData = HomePageDataConstants.homePageData;
   List<MoviesModel> _moives = [];
   List<MoviesModel> get movies => _moives;
+  List<MoviesModel> _moivesearch = [];
+  List<MoviesModel> get moviesearch => _moivesearch;
+  bool isLoading = false;
+  String? errorMassage;
 
   fetchMovies() async {
     _moives = await _movieRepository.fetchMovie();
@@ -46,5 +50,31 @@ class MovieProvider extends ChangeNotifier {
   List<MoviesModel> getStolyMovies() {
     final shuffleMovies = List<MoviesModel>.from(_moives)..shuffle();
     return shuffleMovies.take(4).toList();
+  }
+
+  Future<List<MoviesModel>> searchMovie(String query) async {
+    if (query.isEmpty) {
+      _moivesearch = [];
+      errorMassage = 'search movie name';
+      notifyListeners();
+      return _moivesearch;
+    }
+
+    try {
+      isLoading = true;
+      errorMassage = null;
+      notifyListeners();
+      _moivesearch = await _movieRepository.searchMovie(query);
+      if (_moivesearch.isEmpty) {
+        errorMassage = 'Not Found';
+      }
+      return _moivesearch;
+    } catch (e) {
+      _moivesearch = [];
+      return _moivesearch;
+    } finally {
+      isLoading = false;
+      notifyListeners();
+    }
   }
 }
