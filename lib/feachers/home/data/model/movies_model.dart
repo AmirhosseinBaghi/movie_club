@@ -26,8 +26,12 @@ class MoviesModel {
     year: json["year"],
     country: json["country"],
     imdbRating: json["imdb_rating"],
-    genres: List<String>.from(json["genres"].map((x) => x)),
-    images: List<String>.from(json["images"].map((x) => x)),
+    genres: json["genres"] != null
+        ? List<String>.from(json["genres"].map((x) => x))
+        : [],
+    images: json["images"] != null
+        ? List<String>.from(json["images"].map((x) => x))
+        : [],
   );
 
   Map<String, dynamic> toJson() => {
