@@ -6,8 +6,8 @@ class MovieRepository {
 
   MovieRepository({required this.apiService});
 
-  Future<List<MoviesModel>> fetchMovie() async {
-    return apiService.loadMovie();
+  Future<List<MoviesModel>> fetchMovie(int pageIndex) async {
+    return apiService.loadMovie(pageIndex);
   }
 
   Future<List<MoviesModel>> searchMovie(String query) async {
