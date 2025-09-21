@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_club/feachers/home/presentation/provider/movie_provider.dart';
+import 'package:movie_club/feachers/home/presentation/widgets/all_movie.dart';
 import 'package:movie_club/feachers/home/presentation/widgets/banner.dart';
 import 'package:movie_club/feachers/home/presentation/widgets/fake_searchbar.dart';
 import 'package:movie_club/feachers/home/presentation/widgets/movie_section.dart';
@@ -50,7 +51,12 @@ class HomePage extends StatelessWidget {
               builder: (context, homeProvider, child) {
                 return MovieSection(
                   title: 'Trending',
-                  onSeeAllPressed: () {},
+                  onSeeAllPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AllMovie()),
+                    );
+                  },
                   movies: homeProvider.getTrendingMovies(),
                 );
               },
