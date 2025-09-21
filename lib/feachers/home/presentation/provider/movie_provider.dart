@@ -8,8 +8,9 @@ class MovieProvider extends ChangeNotifier {
   final MovieRepository _movieRepository;
 
   MovieProvider(this._movieRepository) {
-    fetchMovies();
+    fetchMovies(pageIndex);
   }
+
   final HomePageData _homePageData = HomePageDataConstants.homePageData;
   List<MoviesModel> _moives = [];
   List<MoviesModel> get movies => _moives;
@@ -17,9 +18,10 @@ class MovieProvider extends ChangeNotifier {
   List<MoviesModel> get moviesearch => _moivesearch;
   bool isLoading = false;
   String? errorMassage;
-
-  fetchMovies() async {
-    _moives = await _movieRepository.fetchMovie();
+  int pageIndex = 1;
+  fetchMovies(int page) async {
+    _moives = await _movieRepository.fetchMovie(page);
+    pageIndex = page;
     notifyListeners();
   }
 
