@@ -68,7 +68,8 @@ class MovieProvider extends ChangeNotifier {
       notifyListeners();
       _moivesearch = await _movieRepository.searchMovie(query);
       if (_moivesearch.isEmpty) {
-        errorMassage = 'Not Found';
+        errorMassage =
+            'Not Found\n\nWe are sorry we cannot find the movie.\nweare constantly updatingthe app to\ncontain all what you want.';
       }
       return _moivesearch;
     } catch (e) {

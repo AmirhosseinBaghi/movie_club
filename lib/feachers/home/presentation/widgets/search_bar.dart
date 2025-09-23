@@ -45,7 +45,15 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
           provider.isLoading
               ? Center(child: CircularProgressIndicator())
               : provider.errorMassage != null
-              ? Column(children: [Center(child: Text(provider.errorMassage!))])
+              ? Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset('assets/1.png'),
+                    SizedBox(height: 12),
+                    Text(provider.errorMassage!, textAlign: TextAlign.center),
+                  ],
+                )
               : Expanded(
                   child: CustomScrollView(
                     slivers: [
