@@ -3,6 +3,8 @@ import 'package:movie_club/core/theme/theme.dart';
 import 'package:movie_club/feachers/home/data/repository/movie_repository.dart';
 import 'package:movie_club/feachers/home/presentation/homepage.dart';
 import 'package:movie_club/feachers/home/presentation/provider/movie_provider.dart';
+import 'package:movie_club/feachers/moive_detail/data/repository/detail_repository.dart';
+import 'package:movie_club/feachers/moive_detail/presentation/provider/detail_provier.dart';
 import 'package:movie_club/shared/services/api_service.dart';
 import 'package:provider/provider.dart';
 
@@ -13,6 +15,10 @@ void main() {
         ChangeNotifierProvider(
           create: (_) =>
               MovieProvider(MovieRepository(apiService: ApiService())),
+        ),
+        ChangeNotifierProvider(
+          create: (_) =>
+              DetailProvider(DetailScreenRepository(apiService: ApiService())),
         ),
       ],
 
