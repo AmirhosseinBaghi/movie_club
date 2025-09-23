@@ -18,7 +18,7 @@ class MovieCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: InkWell(
+      child: GestureDetector(
         onTap: () {
           Navigator.of(context).push(
             MaterialPageRoute(
