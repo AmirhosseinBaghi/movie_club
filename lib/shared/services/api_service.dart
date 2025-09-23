@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:movie_club/core/constant/constant.dart';
 import 'package:movie_club/feachers/home/data/model/movies_model.dart';
